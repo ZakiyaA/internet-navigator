@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useNavigatorOnline from "use-navigator-online";
 
-function Alert() {
+function Alert(status) {
   const { isOnline, isOffline, backOnline, backOffline } = useNavigatorOnline();
   const [message, setMessage] = useState({
     message_online: "now! you have an internet connection.",
@@ -16,9 +16,9 @@ function Alert() {
     {status ? toast.success(message.message_online) : toast.error(message.message_ofline)}
   }
 
-  useEffect(() => {
+  useEffect((status) => {
     
-    
+    showMessage(status)
   }, [backOnline]);
 
   useEffect(() => {
@@ -39,9 +39,10 @@ function Alert() {
         pauseOnVisibilityChange
         draggable
         pauseOnHover
+        
       />
       
-      <NavigatorOnline onChange={(status) => showMessage(status)} />
+      {/* <NavigatorOnline onChange={(status) => showMessage(status)} /> */}
     </div>
   );
 }
