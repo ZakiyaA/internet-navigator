@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useNavigatorOnline from "use-navigator-online";
 
-function Alert(status) {
+function Alert1(status) {
   const { isOnline, isOffline, backOnline, backOffline } = useNavigatorOnline();
   const [message, setMessage] = useState({
     message_online: "now! you have an internet connection.",
@@ -47,4 +47,4 @@ function Alert(status) {
   );
 }
 
-export default Alert;
+export default Alert1;

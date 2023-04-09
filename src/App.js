@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 import { useNavigatorStatus } from 'react-navigator-status';
-import Alert from './components/Alert';
+// import Alert from './components/Alert';
+// import Alert from './components/Alert';
+// import AlertTitle from '@mui/material/AlertTitle';
 // doesn't show alert initially
 // show offline alert forever
 // show online alert for 4s
-
+import Alert from '@mui/material/Alert';
 
 
 
@@ -37,7 +39,18 @@ const App = () => {
     return () => clearInterval(interval); // clean up interval on unmount
   }, []);
 
-  return <div className="status">{status}</div>;
+  return (
+    <>
+    {status == 'Online' ? 
+  (<div className="status">{status}</div>)
+  :
+  (<Alert severity="error">
+  {/* <AlertTitle>{status}</AlertTitle> */}
+  This is an error alert — <strong>check it out!</strong>
+</Alert>)
+    }
+  </>
+  );
 }
 
 
