@@ -44,10 +44,9 @@ const App = () => {
     {status == 'Online' ? 
   (<div className="status">{status}</div>)
   :
-  (<Alert severity="error">
-  {/* <AlertTitle>{status}</AlertTitle> */}
-  This is an error alert — <strong>check it out!</strong>
-</Alert>)
+    (<Alert severity="error">
+    This is an error alert — <strong>check it out!</strong>
+  </Alert>)
     }
   </>
   );
